@@ -14,4 +14,10 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
+        
+      - name: Setup Nodejs
+        uses: action/setup-node@v4
+        with:
+          node-version: '22'
+          
     
