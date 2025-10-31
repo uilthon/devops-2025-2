@@ -25,6 +25,9 @@ jobs:
 
       - name: install dependence
         run: yarn
+
+      - name: run test
+        run: yarn test
     
      
  
