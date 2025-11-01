@@ -10,6 +10,8 @@ jobs:
   build:
     name: Build and Push
     runs-on: ubuntu-latest
+    outputs:
+      docker_tag: $ {{steps.generate_tag.outputs.sha}}
     
     steps:
       - name: Checkout source code
@@ -28,6 +30,14 @@ jobs:
 
       - name: run test
         run: yarn test
+
+      - name: Generate Tag
+        id: generate_Tag
+        run: 
+              SHA=$(echo $GITHUB_SHA |  head -c7)
+              echo "sha=$SHA" >>$GITHUB_OUTPUT
+              
+      
     
      
  
