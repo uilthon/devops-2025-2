@@ -57,7 +57,6 @@ jobs:
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v4
-      
       - name: Copy files to Digital Ocean
         uses: appleboy/scp-action@v0.1.7
         with:
